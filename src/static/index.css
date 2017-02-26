@@ -33,3 +33,22 @@
 .divTableBody {
     display: table-row-group;
 }
+
+.whiteCard {
+    display: inline-block;
+    width: 200px;
+    height: 250px;
+    margin-left: 1em;
+    border:2px solid black;
+    vertical-align: top;
+    position: relative;
+    background-color: #dcdfe5;
+}
+
+.whiteCardInner {
+    display: block;
+}
+
+.blackCard {
+    text-align: center;
+}
