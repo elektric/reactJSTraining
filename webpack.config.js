@@ -1,15 +1,16 @@
 var debug = process.env.NODE_ENV !== "production";
 debug = true;
-console.log('ENV: ' + process.env.NODE_ENV);
+//console.log('ENV: ' + process.env.NODE_ENV);
 var webpack = require('webpack');
 var path = require('path');
+
 
 module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
   entry: {
-      ministryscheduling: "./ministryscheduling.js",
-      code: "./code.js"
+      index: "./index.js",
+
   },
   module: {
     loaders: [
@@ -25,7 +26,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/static/",
+    path: __dirname + "/src/static/",
     filename: "[name].min.js"
   },
   plugins: debug ? [] : [

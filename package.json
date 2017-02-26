@@ -4,7 +4,9 @@
   "description": "a training project for react",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "node ./node_modules/webpack/bin/webpack.js --watch",
+    "startserver": "node start.js"
   },
   "keywords": [
     "react"
@@ -40,6 +42,7 @@
     "redux-promise-middleware": "*",
     "redux-thunk": "^2.1.0",
     "request": "^2.75.0",
+    "socket.io": "^1.7.3",
     "uuid": "^3.0.1",
     "webpack": "^1.13.2"
   }
