@@ -1,0 +1,46 @@
+{
+  "name": "reactjstraining",
+  "version": "1.0.0",
+  "description": "a training project for react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "jeremy kalsow",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-plugin-transform-class-properties": "^6.3.13",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "bootstrap": "^3.3.7",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "jwt-decode": "^2.1.0",
+    "lodash": "^4.16.4",
+    "path": "^0.12.7",
+    "react": "^0.14.8",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^0.14.6",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-router-bootstrap": "^0.23.1",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-promise-middleware": "*",
+    "redux-thunk": "^2.1.0",
+    "request": "^2.75.0",
+    "uuid": "^3.0.1",
+    "webpack": "^1.13.2"
+  }
+}

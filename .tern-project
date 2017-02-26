@@ -1,0 +1,11 @@
+{
+  "ecmaVersion": 7,
+  "libs": [
+    "jquery"
+  ],
+  "plugins": {
+    "complete_strings": {
+      "maxLength": 15
+    }
+  }
+}
