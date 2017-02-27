@@ -2,25 +2,26 @@ import React from "react";
 
 import io from "socket.io-client";
 import BlackCard from "./BlackCard.jsx";
-import WhiteCard from "./WhiteCard.jsx";
+import WhiteCards from "./WhiteCards.jsx";
+import Answers from "./Answers.jsx";
+
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             socket: null,
-            blackcard: null,
-            whitecards: []
+            blackcard: "",
+            whitecards: [],
+            answers: []
         };
     }
     render() {
-        let whitecards = this.state.whitecards.map((wc) => {
-            return (<WhiteCard text={wc} sendChoiceToServer={this.sendChoiceToServer.bind(this)} key={wc}/>);
-        })
         return (
             <div>
-                <BlackCard text={this.state.blackcard}/> {whitecards}
-
+                <BlackCard text={this.state.blackcard}/>
+                <WhiteCards whitecards={this.state.whitecards} sendChoiceToServer={this.sendChoiceToServer.bind(this)} />
+                <Answers answers={this.state.answers} sendWinnerToServer={this.sendWinnerToServer.bind(this)} />
             </div>
         );
     }
@@ -48,8 +49,21 @@ export default class App extends React.Component {
             let whitecards = data;
             this.setState(Object.assign({}, this.state, {whitecards}));
         });
+
+        socket.on('answers', (data) => {
+            // $('#answerbody').append("<div class=\"divTableRow\"><div class=\"divTableCell\">")
+            // .append(data)
+            // .append("</div></div>");
+            //console.log(data);
+            let answers = data;
+            this.setState(Object.assign({}, this.state, {answers}));
+        });
     }
     sendChoiceToServer(text) {
         this.state.socket.emit('choice', text);
+    }
+
+    sendWinnerToServer(text) {
+        this.state.socket.emit('winner', this.state.blackcard.replace(/_/g, text));
     }
 }
